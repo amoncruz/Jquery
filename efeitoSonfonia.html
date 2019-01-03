@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="caixa">
+        <div class="titulo"><h1>Titulo1</h1></div> 
+    <div class="conteudo"> Voluptate qui cupidatat id in occaecat irure consequat magna consequat. Dolore fugiat velit aliquip aute Lorem non exercitation cillum reprehenderit minim irure velit occaecat. Ea pariatur esse laboris in eiusmod sint cupidatat magna anim laborum adipisicing ea laboris. Excepteur laborum esse nisi irure officia laboris labore qui Lorem fugiat.
+Irure occaecat veniam occaecat pariatur cillum elit duis culpa voluptate. Dolor nulla ut cupidatat enim consequat dolore laboris. Ipsum veniam sint consectetur non id laborum esse est laboris nulla do fugiat. Consectetur est irure amet pariatur deserunt Lorem quis ullamco ipsum voluptate. Ipsum anim cupidatat officia in cupidatat aliqua velit tempor labore qui ad. Est aliquip non dolor qui tempor velit ullamco id consectetur.
+    </div>
+
+    </div>
+
+    <div class="caixa">
+            <div class="titulo"><h1>Titulo2 </h1></div> 
+        <div class="conteudo"> Voluptate qui cupidatat id in occaecat irure consequat magna consequat. Dolore fugiat velit aliquip aute Lorem non exercitation cillum reprehenderit minim irure velit occaecat. Ea pariatur esse laboris in eiusmod sint cupidatat magna anim laborum adipisicing ea laboris. Excepteur laborum esse nisi irure officia laboris labore qui Lorem fugiat.
+    Irure occaecat veniam occaecat pariatur cillum elit duis culpa voluptate. Dolor nulla ut cupidatat enim consequat dolore laboris. Ipsum veniam sint consectetur non id laborum esse est laboris nulla do fugiat. Consectetur est irure amet pariatur deserunt Lorem quis ullamco ipsum voluptate. Ipsum anim cupidatat officia in cupidatat aliqua velit tempor labore qui ad. Est aliquip non dolor qui tempor velit ullamco id consectetur.
+        </div>
+    
+        </div>
+        <div class="caixa">
+                <div class="titulo"><h1>Titulo3</h1></div> 
+            <div class="conteudo"> Voluptate qui cupidatat id in occaecat irure consequat magna consequat. Dolore fugiat velit aliquip aute Lorem non exercitation cillum reprehenderit minim irure velit occaecat. Ea pariatur esse laboris in eiusmod sint cupidatat magna anim laborum adipisicing ea laboris. Excepteur laborum esse nisi irure officia laboris labore qui Lorem fugiat.
+        Irure occaecat veniam occaecat pariatur cillum elit duis culpa voluptate. Dolor nulla ut cupidatat enim consequat dolore laboris. Ipsum veniam sint consectetur non id laborum esse est laboris nulla do fugiat. Consectetur est irure amet pariatur deserunt Lorem quis ullamco ipsum voluptate. Ipsum anim cupidatat officia in cupidatat aliqua velit tempor labore qui ad. Est aliquip non dolor qui tempor velit ullamco id consectetur.
+            </div>
+        
+            </div>
+        </div>
+<script>
+    $(function(){
+        $('.conteudo').addClass('hide');
+        $('.titulo').click(function(){
+            var conteudo=$(this).parent().find('.conteudo');
+            if(!conteudo.hasClass('show')){
+               $('.caixa').find('.show').slideUp('fast',function(){
+                   $(this).addClass('hide').removeClass('show');
+               });
+            
+               conteudo.slideDown('fast',function(){
+                $(this).addClass('show').removeClass('hide');
+               });
+            }else{
+                conteudo.slideUp('fast',function(){
+                    $(this).addClass('hide').removeClass('show');
+                });
+            }
+        })
+    })       
+</script>
+</body>
+</body>
+</html>
