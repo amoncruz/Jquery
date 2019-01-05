@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+}
+.main {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-areas:
+    "topo topo topo topo topo topo"
+    "header header header header header  aside"
+    "conteudo conteudo conteudo conteudo conteudo aside"
+    "imgs imgs imgs imgs imgs aside"
+    "showcase showcase showcase showcase showcase aside"
+    "footer footer footer footer footer footer";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 400px 400px 400px 100px;
+}
+.topo {
+  grid-area: topo;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: header;
+  background-color: black;
+}
+.content {
+  background-color: red;
+  grid-area: conteudo;
+}
+.showcase {
+  grid-area: showcase;
+  background: #c4c4c4;
+}
+.imgs {
+  grid-area: imgs;
+  background: lightblue;
+}
+.aside {
+  grid-area: aside;
+
+  background-color: yellow;
+}
+.footer {
+  grid-area: footer;
+  background-color: green;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  padding: 10px;
+}
+li {
+  color: white;
+  margin: 4px;
+  background: #c4c4c4;
+  padding: 10px;
+}
+li a {
+  color: white;
+  text-decoration: none;
+}
+.lista {
+  align-self: center;
+}
+.hide {
+  opacity: 0;
+}
+.anime {
+  opacity: 0;
+  transform: translate3d(-100px, 0, 0);
+  transition: 0.3s;
+}
+
+.anime-start {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}

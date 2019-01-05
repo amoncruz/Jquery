@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css" />
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="topo" id="topo"></div>
+      <div class="header" id="header">
+        <ul class="lista">
+          <li><a href="#" titulo="content">Content</a></li>
+          <li><a href="#" titulo="showcase">Showcase</a></li>
+          <li><a href="#" titulo="imgs">IMGS</a></li>
+          <li><a href="#" titulo="footer">Footer</a></li>
+        </ul>
+      </div>
+      <div class="anime content" id="content">
+        Dolor fugiat veniam adipisicing duis ad nulla elit nulla. Et quis ut ex
+        culpa ad nostrud enim occaecat nisi ex cupidatat id. Pariatur laboris
+        laborum laborum pariatur aute culpa elit pariatur elit et. Voluptate
+        deserunt nostrud dolore ut proident nulla consequat elit aute dolore
+        proident sunt qui in. Et in eu adipisicing ad ut. Labore amet nisi qui
+        voluptate nulla velit exercitation ipsum velit. Anim Lorem ut Lorem
+        culpa exercitation cillum aliquip. Non et dolor nisi aliquip mollit
+        officia ut excepteur est sint in. Proident qui occaecat ea culpa aliquip
+        ad ullamco consequat nostrud culpa nulla. Nostrud veniam consectetur
+        laboris aliquip non aute esse nulla. Consequat aliqua aliqua ex ex do
+        laborum voluptate dolore laborum labore. Ad minim officia do ad magna
+        est culpa minim fugiat magna laborum.
+      </div>
+      <div class=" anime aside" id="aside">
+        Duis dolore incididunt aliqua tempor ex tempor eiusmod excepteur. Qui et
+        dolore culpa commodo nisi minim esse do. Reprehenderit do aliqua qui non
+        qui consequat. Officia pariatur eiusmod laboris amet exercitation
+        deserunt ipsum nulla eu cillum velit duis minim. Consequat voluptate est
+        velit consectetur voluptate sit amet aliquip labore amet velit excepteur
+        reprehenderit commodo. Cupidatat ea sunt cillum velit pariatur ut.
+        Eiusmod eiusmod veniam consequat culpa nostrud velit cillum
+        reprehenderit. Nulla in quis consectetur elit duis excepteur velit
+        laboris consequat nisi laboris ipsum nostrud mollit. Nulla sunt sit duis
+        laboris eiusmod aliqua non dolor deserunt qui pariatur. Officia nulla
+        veniam duis id incididunt enim ipsum dolor occaecat ut. Mollit proident
+        velit nulla deserunt magna do. Proident nostrud id nostrud ullamco id
+        mollit aliquip in est. Anim nisi quis id laborum duis sint nulla anim.
+      </div>
+
+      <div class="anime imgs" id="imgs">this is i</div>
+
+      <div class="anime showcase" id="showcase">this is showcase!</div>
+      <div class="footer" id="footer">daklwdkaldkaldka</div>
+    </div>
+    <script>
+      $(function() {
+        $("li a").click(function() {
+          var $section = $(this).attr("titulo");
+
+          $("html , body").animate({
+            scrollTop: $("#" + $section).offset().top
+          });
+        });
+
+        var $target = $(".anime"),
+          animationClass = "anime-start",
+          offset = ($(window).height() * 3) / 4;
+
+        function animeScroll() {
+          var documentTop = $(document).scrollTop();
+
+          $target.each(function() {
+            var itemTop = $(this).offset().top;
+            if (documentTop > itemTop - offset) {
+              $(this).addClass(animationClass);
+            } else {
+              $(this).removeClass(animationClass);
+            }
+          });
+        }
+
+        animeScroll();
+
+        $(document).scroll(function() {
+          animeScroll();
+        });
+      });
+    </script>
+  </body>
+</html>
